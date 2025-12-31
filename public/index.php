@@ -42,7 +42,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM contacts ORDER BY created_at DES
             <table class="table table-striped table-hover table-bordered align-middle mb-0">
                 <thead class="table-primary">
                     <tr>
-                        <th>#</th>
+                        <th>No</th>
                         <th>Nama</th>
                         <th>Telepon</th>
                         <th>Email</th>
