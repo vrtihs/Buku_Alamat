@@ -42,7 +42,6 @@ $result = mysqli_query($koneksi, "SELECT * FROM contacts ORDER BY created_at DES
             <table class="table table-striped table-hover table-bordered align-middle mb-0">
                 <thead class="table-primary">
                     <tr>
-                        <th>No</th>
                         <th>Nama</th>
                         <th>Telepon</th>
                         <th>Email</th>
@@ -59,7 +58,6 @@ $result = mysqli_query($koneksi, "SELECT * FROM contacts ORDER BY created_at DES
                 while($row = mysqli_fetch_assoc($result)): ?>
 
                     <tr>
-                        <td><?= $no++; ?></td>
                         <td><?= $row['name']; ?></td>
                         <td><?= $row['phone']; ?></td>
                         <td><?= $row['email']; ?></td>
