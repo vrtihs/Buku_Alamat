@@ -63,7 +63,11 @@ $data = mysqli_fetch_assoc($result);
                     <a href="edit.php?id=<?= $data['id']; ?>" class="btn btn-warning">
                         Edit
                     </a>
-
+                    <a href="delete.php?id=<?= $row['id']; ?>" 
+                       class="btn btn-sm btn-danger"
+                       onclick="return confirm('Yakin ingin menghapus?')">
+                            Hapus
+                    </a>
                 </div>
             </div>
 
