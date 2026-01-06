@@ -8,6 +8,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $email    = $_POST['email'];
     $category = $_POST['category'];
 
+    if (!empty($_FILES['image']['name'])) {
+        $imageName = time() . "_" . $_FILES['image']['name'];
+        move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/" . $imageName);
+    }
+    
     $query = "INSERT INTO contacts (name, phone, email, category)
               VALUES ('$name', '$phone', '$email', '$category')";
 
