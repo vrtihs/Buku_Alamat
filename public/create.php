@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
     
     $query = "INSERT INTO contacts (name, phone, email, category, image, note)
-              VALUES ('$name', '$phone', '$email', '$category')";
+              VALUES ('$name', '$phone', '$email', '$category', '$imageName', '$note')";
 
     if(mysqli_query($koneksi, $query)){
         header("Location: index.php?success=1");
