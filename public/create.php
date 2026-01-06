@@ -7,6 +7,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $phone    = $_POST['phone'];
     $email    = $_POST['email'];
     $category = $_POST['category'];
+    $note = $_POST['note'];
 
     if (!empty($_FILES['image']['name'])) {
         $imageName = time() . "_" . $_FILES['image']['name'];
@@ -107,4 +108,3 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 </body>
 </html>
-
