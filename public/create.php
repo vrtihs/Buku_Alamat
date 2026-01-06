@@ -71,7 +71,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         <option value="Lainnya">Lainnya</option>
                     </select>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label">Gambar</label>
+                    <input type="file" name="image" class="form-control">
+                </div>
 
+                <div class="mb-3">
+                    <label class="form-label">Catatan</label>
+                    <textarea name="note" class="form-control" rows="3"></textarea>
+                </div>
+                
                 <div class="d-flex justify-content-between">
                     <a href="index.php" class="btn btn-secondary">
                         <i class="bi bi-arrow-left"></i> Kembali
