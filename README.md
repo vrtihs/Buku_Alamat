@@ -56,8 +56,6 @@ config/ — konfigurasi koneksi database (database.php)
 
 public/ — file utama aplikasi (index, create, edit, delete, view)
 
-public/uploads/ — penyimpanan foto kontak (opsional)
-
 README.md — dokumentasi project
 
 ## Uji Coba Singkat
