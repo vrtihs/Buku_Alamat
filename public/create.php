@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if (!empty($_FILES['image']['name'])) {
         $imageName = time() . "_" . $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/" . $imageName);
+        move_uploaded_file($_FILES['image']['tmp_name'], "../assets/" . $imageName);
     }
     
     $query = "INSERT INTO contacts (name, phone, email, category, image, note)
