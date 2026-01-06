@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         move_uploaded_file($_FILES['image']['tmp_name'], "../uploads/" . $imageName);
     }
     
-    $query = "INSERT INTO contacts (name, phone, email, category)
+    $query = "INSERT INTO contacts (name, phone, email, category, image, note)
               VALUES ('$name', '$phone', '$email', '$category')";
 
     if(mysqli_query($koneksi, $query)){
