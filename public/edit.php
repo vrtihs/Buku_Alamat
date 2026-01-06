@@ -21,13 +21,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone    = $_POST['phone'];
     $email    = $_POST['email'];
     $category = $_POST['category'];
+    $note = $_POST['note'];
+    $imageName = $contact['image'];
+
+if (!empty($_FILES['image']['name'])) {
+    $imageName = time() . "_" . $_FILES['image']['name'];
+    move_uploaded_file($_FILES['image']['tmp_name'], "../assets/" . $imageName);
+}
 
     mysqli_query($koneksi, "
         UPDATE contacts SET 
             name='$name',
             phone='$phone',
             email='$email',
-            category='$category'
+            category='$category',
+            image='$imageName',
+            note='$note'
         WHERE id=$id
     ");
 
@@ -41,7 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Edit Kontak</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 <body class="bg-light">
 
@@ -61,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <h5 class="mb-3">Perbarui Data Kontak</h5>
 
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
@@ -90,7 +101,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <option value="Lainnya"  <?= $contact['category']=='Lainnya'?'selected':''; ?>>Lainnya</option>
                     </select>
                 </div>
+                <div>
+                <?php if($contact['image']) : ?>
+                    <img src="../assets/<?= $contact['image']; ?>" style="max-height:120px;" class="img-thumbnail mb-2">
+                <?php endif; ?>
+                <label class="form-label">Gambar</label>
+                <input type="file" name="image" class="form-control">
+                <small class="text-muted">Kosongkan jika tidak ingin mengganti foto</small>
+                </div>
 
+                <div>
+                <label class="form-label">Catatan</label>
+                <textarea name="note" class="form-control" rows="3"><?= $contact['note']; ?></textarea>
+                </div>
                 <div class="d-flex justify-content-between">
                     <a href="index.php" class="btn btn-secondary">
                         Kembali
