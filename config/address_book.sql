@@ -25,3 +25,7 @@ VALUES
 ALTER TABLE contacts 
 ADD photo VARCHAR(255) NULL,
 ADD notes TEXT NULL;
+
+ALTER TABLE contacts 
+ADD image VARCHAR(255) NULL,
+ADD note TEXT NULL;
