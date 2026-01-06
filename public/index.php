@@ -25,15 +25,17 @@ $result = mysqli_query($koneksi, "SELECT * FROM contacts ORDER BY created_at DES
     </div>
 </nav>
 
+
 <div class="container">
 
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4>Daftar Kontak</h4>
 
-       <a href="create.php" class="btn btn-success">
+        <a href="create.php" class="btn btn-success">
         <i class="bi bi-telephone-plus me-1"></i>
             Tambah Kontak
         </a>
+
     </div>
 
     <div class="card shadow-sm">
@@ -64,6 +66,10 @@ $result = mysqli_query($koneksi, "SELECT * FROM contacts ORDER BY created_at DES
                         <td><?= $row['category']; ?></td>
 
                         <td>
+                            <a href="view.php?id=<?= $row['id']; ?>" class="btn btn-info btn-sm">
+                                Lihat
+                            </a>
+
                             <a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning">
                                 Edit
                             </a>
