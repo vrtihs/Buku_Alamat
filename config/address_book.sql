@@ -23,9 +23,5 @@ VALUES
 ('Riana Oktavia', '08234567890', 'rianaokta@gmail.com', 'Jl. Sudirman No. 5, Denpasar', 'Kerja');
 
 ALTER TABLE contacts 
-ADD photo VARCHAR(255) NULL,
-ADD notes TEXT NULL;
-
-ALTER TABLE contacts 
 ADD image VARCHAR(255) NULL,
 ADD note TEXT NULL;
