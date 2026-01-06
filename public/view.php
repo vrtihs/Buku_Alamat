@@ -27,8 +27,9 @@ $data = mysqli_fetch_assoc($result);
             <div class="row">
                 <div class="col-md-4 text-center">
 
-                    <?php if($data['photo']) : ?>
-                        <img src="../uploads/<?= $data['photo']; ?>" 
+                    <!-- Foto -->
+                    <?php if($data['image']) : ?>
+                        <img src="../assets/<?= $data['image']; ?>" 
                              class="img-fluid rounded mb-3"
                              style="max-height: 220px; object-fit: cover;">
                     <?php else: ?>
@@ -50,10 +51,11 @@ $data = mysqli_fetch_assoc($result);
                     <hr>
 
                     <h6>Catatan</h6>
-                    <p><?= $data['notes'] ?: '— tidak ada catatan —'; ?></p>
+                    <p><?= $data['note'] ?: '— tidak ada catatan —'; ?></p>
 
                     <hr>
 
+                    <!-- Tombol WhatsApp -->
                     <a target="_blank"
                        class="btn btn-success"
                        href="https://wa.me/62<?= ltrim($data['phone'], '0'); ?>">
@@ -74,4 +76,3 @@ $data = mysqli_fetch_assoc($result);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
