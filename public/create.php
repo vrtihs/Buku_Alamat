@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <div class="card shadow-sm">
         <div class="card-body">
 
-            <form method="POST">
+            <form method="POST"  enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
