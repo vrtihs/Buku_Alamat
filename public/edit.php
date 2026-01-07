@@ -33,6 +33,10 @@ if (!empty($_FILES['image']['name'])) {
         echo "File harus berupa gambar (jpg, jpeg, png, gif)";
         exit;
     }
+
+    if (!empty($contact['image']) && file_exists("../assets/" . $contact['image'])) {
+        unlink("../assets/" . $contact['image']);
+    }
     
     $imageName = time() . "_" . $_FILES['image']['name'];
     move_uploaded_file($_FILES['image']['tmp_name'], "../assets/" . $imageName);
