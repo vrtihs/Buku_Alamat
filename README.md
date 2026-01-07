@@ -42,9 +42,12 @@ Fitur utama yang berhasil diimplementasikan pada aplikasi Buku Alamat meliputi:
 5. **Melihat Detail Kontak**  
    Menampilkan informasi lengkap sebuah kontak, termasuk nomor telepon, email, kategori, dan catatan.
 
-6. **Pengelompokan Kategori Kontak**  
-   Kontak dapat diklasifikasikan ke dalam kategori Teman, Keluarga, Kerja, dan Lainnya.
-
+6. **Penyimpanan Kategori Kontak**  
+   Setiap kontak dapat diberi kategori (Teman, Keluarga, Kerja, atau Lainnya) untuk membantu pengorganisasian data.
+   
+7. **Pencarian Kontak Berdasarkan Nama**
+   Pengguna dapat mencari kontak dengan mengetikkan nama pada kolom pencarian, sehingga data lebih mudah ditemukan.
+   
 ## Struktur Folder
 
 assets/ - folder penyimpanan gambar
