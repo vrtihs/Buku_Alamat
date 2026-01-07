@@ -2,6 +2,19 @@
 include '../config/database.php';
 
 $result = mysqli_query($koneksi, "SELECT * FROM contacts ORDER BY created_at DESC");
+$search = mysqli_real_escape_string($koneksi, $_GET['q'] ?? '');
+if ($search) {
+    $result = mysqli_query($koneksi, "
+        SELECT * FROM contacts
+        WHERE name LIKE '%$search%'
+        ORDER BY created_at DESC
+    ");
+} else {
+    $result = mysqli_query($koneksi, "
+        SELECT * FROM contacts
+        ORDER BY created_at DESC
+    ");
+}
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +48,12 @@ $result = mysqli_query($koneksi, "SELECT * FROM contacts ORDER BY created_at DES
         <i class="bi bi-telephone-plus me-1"></i>
             Tambah Kontak
         </a>
-
+<form class="d-flex mb-3 w-50" method="GET">
+    <input type="text" name="q" class="form-control form-control-sm me-2"
+            placeholder="Cari nama..."
+            value="<?= $_GET['q'] ?? '' ?>">
+    <button class="btn btn-outline-primary btn-sm" type="submit">Cari</button>
+    </form>
     </div>
 
     <div class="card shadow-sm">
@@ -66,24 +84,30 @@ $result = mysqli_query($koneksi, "SELECT * FROM contacts ORDER BY created_at DES
                         <td><?= $row['category']; ?></td>
 
                         <td>
-                            <a href="view.php?id=<?= $row['id']; ?>" class="btn btn-info btn-sm">
-                                Lihat
+                             <a href="view.php?id=<?= $row['id']; ?>" class="btn btn-info btn-sm">
+                                <i class="bi bi-eye"></i>
                             </a>
 
-                            <a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning">
-                                Edit
+                            <a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil-square"></i>
                             </a>
 
                             <a href="delete.php?id=<?= $row['id']; ?>" 
-                               class="btn btn-sm btn-danger"
-                               onclick="return confirm('Yakin ingin menghapus?')">
-                                Hapus
+                            class="btn btn-danger btn-sm"
+                            onclick="return confirm('Yakin ingin menghapus?')">
+                                <i class="bi bi-trash"></i>
                             </a>
                         </td>
                     </tr>
 
                 <?php endwhile; ?>
-
+ <?php if (mysqli_num_rows($result) == 0): ?>
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-4">
+                            Tidak ada kontak ditemukan.
+                        </td>
+                    </tr>
+                <?php endif; ?>
                 </tbody>
             </table>
 
