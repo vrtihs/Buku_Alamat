@@ -47,6 +47,8 @@ Fitur utama yang berhasil diimplementasikan pada aplikasi Buku Alamat meliputi:
 
 ## Struktur Folder
 
+assets/ - folder penyimpanan gambar
+
 config/ — konfigurasi koneksi database (database.php)
 
 public/ — file utama aplikasi (index, create, edit, delete, view)
