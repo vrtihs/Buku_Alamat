@@ -8,7 +8,7 @@ Project ini dikembangkan sebagai bagian dari persyaratan penilaian mata kuliah *
 
 | No | Nama | NIM | GitHub |
 |----|------|-----|--------|
-| 1 | Ni Putu Victoria Ratih Susanti | 240030259 | vriths |
+| 1 | Ni Putu Victoria Ratih Susanti | 240030259 | vrtihs |
 | 2 | Ni Putu Amel Angelina Putri | 240030246 | amel2005-git |
 | 3 | Gusti Ayu Putri Satya Pradewi Widhiantara | 240030252 | gaputrisatya-hash |
 | 4 | Naila Batheff | 240030185 | batheffnaila-rgb |
