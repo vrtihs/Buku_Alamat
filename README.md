@@ -6,18 +6,13 @@ Project ini dikembangkan sebagai bagian dari persyaratan penilaian mata kuliah *
 
 ## Daftar Anggota Kelompok
 
-| No | Nama | NIM | GitHub | Peran |
-|----|------|-----|--------|-------|
-| 1 | Ni Putu Victoria Ratih Susanti | 240030259 | vriths | Back-End Developer |
-| 2 | Ni Putu Amel Angelina Putri | 240030246 | amel2005-git | Front-End Developer |
-| 3 | Gusti Ayu Putri Satya Pradewi Widhiantara | 240030252 | gaputrisatya-hash | Database Administrator |
-| 4 | Naila Batheff | 240030185 | batheffnaila-rgb | Dokumentasi & Integrasi Sistem |
+| No | Nama | NIM | GitHub |
+|----|------|-----|--------|
+| 1 | Ni Putu Victoria Ratih Susanti | 240030259 | vriths |
+| 2 | Ni Putu Amel Angelina Putri | 240030246 | amel2005-git |
+| 3 | Gusti Ayu Putri Satya Pradewi Widhiantara | 240030252 | gaputrisatya-hash |
+| 4 | Naila Batheff | 240030185 | batheffnaila-rgb |
 
-**Pembagian Peran:**
-- **Back-End Developer**: Mengembangkan logika aplikasi menggunakan PHP dan proses CRUD.
-- **Front-End Developer**: Mendesain tampilan antarmuka menggunakan HTML, CSS, Bootstrap, dan JavaScript.
-- **Database Administrator**: Merancang struktur database dan mengelola koneksi database MySQL.
-- **Dokumentasi & Integrasi Sistem**: Menyusun dokumentasi project (README.md) dan memastikan integrasi antar modul berjalan dengan baik.
 
 ## Lingkungan Pengembangan
 Teknologi yang digunakan dalam pengembangan aplikasi ini adalah:
