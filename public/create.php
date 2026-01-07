@@ -10,6 +10,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $note = $_POST['note'];
 
     if (!empty($_FILES['image']['name'])) {
+        
+        $allowed = ['jpg','jpeg','png','gif'];
+        $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+
+        if (!in_array($ext, $allowed)) {
+            echo "File harus berupa gambar.";
+            exit;
+        }
         $imageName = time() . "_" . $_FILES['image']['name'];
         move_uploaded_file($_FILES['image']['tmp_name'], "../assets/" . $imageName);
     }
