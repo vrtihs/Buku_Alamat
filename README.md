@@ -58,6 +58,23 @@ public/ — file utama aplikasi (index, create, edit, delete, view)
 
 README.md — dokumentasi project
 
+## Cara Instalasi
+
+1. Clone atau download project ini.
+2. Pindahkan folder `address_book` ke dalam:
+   - `htdocs` (jika menggunakan XAMPP)
+3. Import database:
+   - Buka phpMyAdmin
+   - Buat database baru: `address_book`
+   - Import file `config/address_book.sql`
+4. Sesuaikan koneksi database jika diperlukan pada `config/database.php`.
+
+## Cara Menjalankan
+
+Buka browser kemudian akses:
+
+http://localhost/address_book/public/index.php
+
 ## Uji Coba Singkat
 
 Buka index.php untuk melihat daftar kontak.
