@@ -25,6 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $imageName = $contact['image'];
 
 if (!empty($_FILES['image']['name'])) {
+
+    $allowed = ['jpg','jpeg','png','gif'];
+    $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+
+    if (!in_array($ext, $allowed)) {
+        echo "File harus berupa gambar (jpg, jpeg, png, gif)";
+        exit;
+    }
+    
     $imageName = time() . "_" . $_FILES['image']['name'];
     move_uploaded_file($_FILES['image']['tmp_name'], "../assets/" . $imageName);
 }
@@ -101,7 +110,7 @@ if (!empty($_FILES['image']['name'])) {
                         <option value="Lainnya"  <?= $contact['category']=='Lainnya'?'selected':''; ?>>Lainnya</option>
                     </select>
                 </div>
-                <div>
+                <div class="mb-3">
                 <?php if($contact['image']) : ?>
                     <img src="../assets/<?= $contact['image']; ?>" style="max-height:120px;" class="img-thumbnail mb-2">
                 <?php endif; ?>
@@ -110,7 +119,7 @@ if (!empty($_FILES['image']['name'])) {
                 <small class="text-muted">Kosongkan jika tidak ingin mengganti foto</small>
                 </div>
 
-                <div>
+                <div class="mb-3">
                 <label class="form-label">Catatan</label>
                 <textarea name="note" class="form-control" rows="3"><?= $contact['note']; ?></textarea>
                 </div>
