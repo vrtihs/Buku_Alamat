@@ -19,7 +19,9 @@ $data = mysqli_fetch_assoc($result);
 
 <div class="container mt-4">
 
-    <a href="index.php" class="btn btn-secondary mb-3">← Kembali</a>
+    <a href="index.php" class="btn btn-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Kembali
+    </a>
 
     <div class="card shadow-sm">
         <div class="card-body">
